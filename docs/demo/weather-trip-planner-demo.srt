@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hi, I'm Tarun Vigneswaran. This is my Weather Trip Planner for the PM Accelerator AI Engineering assessment.
+
+2
+00:00:05,000 --> 00:00:10,000
+It helps people check the weather and plan outdoor trips.
+
+3
+00:00:10,000 --> 00:00:15,000
+I'll search for Austin. The backend geocodes it and calls the Open-Meteo API live.
+
+4
+00:00:15,000 --> 00:00:21,000
+Current conditions: temperature, feels-like, humidity, wind, rain chance and UV, with the time they were retrieved.
+
+5
+00:00:21,000 --> 00:00:25,500
+Below that is the five-day forecast.
+
+6
+00:00:25,500 --> 00:00:30,000
+Units switch between Celsius and Fahrenheit instantly. Data is stored in metric and converted for display.
+
+7
+00:00:30,000 --> 00:00:35,500
+“Best day for hiking” is rule-based scoring, not AI. Each day starts at 100 points.
+
+8
+00:00:35,500 --> 00:00:45,000
+It loses points when the high is outside 10–24 °C, rain chance tops 30%, wind passes 30 km/h, or storms, snow or very high UV are expected.
+
+9
+00:00:45,000 --> 00:00:52,000
+Now I'll save a trip with dates inside the 16-day forecast window. Each day's weather is stored in the database.
+
+10
+00:00:52,000 --> 00:00:58,000
+After a full page reload, the trip is still there, loaded from the database.
+
+11
+00:00:58,000 --> 00:01:06,000
+I'll edit the trip to add a day. Changing the dates re-downloads the weather for the new range.
+
+12
+00:01:06,000 --> 00:01:15,000
+Then I export its weather as CSV. Text fields are protected against spreadsheet formula injection.
+
+13
+00:01:15,000 --> 00:01:22,000
+Validation runs in the browser and again in the API. An end date before the start date gets a clear message.
+
+14
+00:01:22,000 --> 00:01:30,000
+Finally, I delete the demo trip, completing create, read, update and delete.
+
+15
+00:01:30,000 --> 00:01:37,000
+The frontend is Next.js, React and TypeScript. The backend is FastAPI with SQLAlchemy and SQLite; PostgreSQL also works.
+
+16
+00:01:37,000 --> 00:01:45,000
+Weather comes from Open-Meteo. Saved weather is replaced only when every requested day arrives with usable temperatures, so a failed or partial refresh never overwrites data.
+
+17
+00:01:45,000 --> 00:01:50,000
+Here's the actual test run: 32 backend tests passing, plus 12 live tests against the real weather API.
+
+18
+00:01:50,000 --> 00:01:56,000
+LLM summaries are optional. Without an API key, the app uses rule-based text. Thanks for watching.
