@@ -11,8 +11,8 @@ import WeatherView from "./WeatherView";
 
 type Tab = "weather" | "trips" | "ask";
 
-// Set NEXT_PUBLIC_AUTHOR_NAME in .env.local; the credit line is hidden until it is set.
-const AUTHOR = process.env.NEXT_PUBLIC_AUTHOR_NAME?.trim();
+// Allow a deployment to customize the credit while showing the author by default.
+const AUTHOR = process.env.NEXT_PUBLIC_AUTHOR_NAME?.trim() || "Tarun Vigneswaran";
 
 // The °C/°F preference lives in localStorage; read it as an external store so SSR and hydration agree.
 const UNIT_EVENT = "unit-change";
