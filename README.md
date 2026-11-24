@@ -2,6 +2,8 @@
 
 **By Tarun Vigneswaran** · Built for the PM Accelerator frontend and backend assessment
 
+**[Try the live app](https://weatherwise-ui-tarun.onrender.com/)** · Hosted on Render. The first visit may take a minute while the free services wake up.
+
 Planning a trip is easier when you know what the weather might bring. Weather Trip Planner lets you look up a place, check the forecast, and save a trip with its weather information so you can come back to it later.
 
 The weather comes from [Open-Meteo](https://open-meteo.com/), rather than a fixed set of example data. You don't need a weather API key to run the app.
